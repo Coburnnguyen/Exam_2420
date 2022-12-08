@@ -32,3 +32,40 @@ Next, to change 'eco' to 'echo' on line 10 and 11,  use '/eco' to move the curso
 
 Next to change 'numbs' to ':digit:" on line 10, use '/numbs' to highlight 'numbs' than press 'ce' to delete numbs and insert ':digit:'
 ![image](https://user-images.githubusercontent.com/99624124/206572537-be41eaae-8a3a-4f1b-bb8a-7157c9095770.png)
+
+##Part 3
+To figure out how to cuse the manpage for journalctl to write a journalctl command that does the following:
+- print logs for the current boot
+- logs should have a priority of warning or more important
+- output in a nice pretty json.
+
+
+To print logs for the current boot, use the option
+```
+--boot
+```
+THis can be found in the man by searching /boot
+![image](https://user-images.githubusercontent.com/99624124/206575499-0bd8c50b-8de3-4e0c-a6bb-b98af76af2fb.png)
+
+To make sure logs should have a priority of warning or more important, use the command
+```
+ --priority=warning
+```
+
+This can be found in the man page by search /priority, and you should see this.
+![image](https://user-images.githubusercontent.com/99624124/206575789-3f6eecf7-662e-423c-b0e9-5bd47115a21f.png)
+
+To output in a nice pretty json, use the option 
+```
+json-pretty
+```
+This can be found in the man page by searching /pretty, and you should see this.
+![image](https://user-images.githubusercontent.com/99624124/206574587-6dc15ba0-107f-4ecf-9290-9b3457619d02.png)
+![Uploading image.png…]()
+
+Your final command should be this
+```
+ journalctl --boot --priority=warning --output=json-pretty
+```
+
+
